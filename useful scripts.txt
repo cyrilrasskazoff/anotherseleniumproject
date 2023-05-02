@@ -1,0 +1,29 @@
+to create a virtual env: python -m venv venv
+
+to activate venv on Windows run in Terminal: venv/Scripts/activate.ps1
+to activate venv on MacOS run in Terminal: source venv/bin/activate
+
+
+to deactivate virtual environment run: deactivate
+
+install selenium + webdriver-manager: pip install selenium webdriver-manager
+webdriver-manager позволяет автоматически скачивать актуальную версию драйвера для браузеров без постоянной замены их в проектах
+
+saving settings and creating requirements.txt: pip freeze > requirements.txt
+to copy packages from requirements.txt to venv: pip install -r requirements.txt
+
+requets  - библиотека для работы с API-реквестами
+pip install requests
+
+jsonschema - библиотека для работы с json
+pip install jsonschema
+
+pydantic - это библиотека, которая обеспечивает проведение валидации данных и управление настройками JSON-схем
+pip install pydantic
+
+https://docs.qameta.io/allure/ - install allure on OS and set system variable
+install allure-pytest package: pip install allure-pytest
+it is necessary to pass <--alluredir='path to store the report'> in order to store test results
+pytest -s -v <test_file_name> --alluredir=<name_of_dir>
+to generate allure report: allure serve <name_of_dir>
+
