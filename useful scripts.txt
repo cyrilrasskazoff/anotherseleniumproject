@@ -27,3 +27,8 @@ it is necessary to pass <--alluredir='path to store the report'> in order to sto
 pytest -s -v <test_file_name> --alluredir=<name_of_dir>
 to generate allure report: allure serve <name_of_dir>
 
+
+SQLAlchemy — это библиотека на языке Python для работы с реляционными СУБД с применением технологии ORM.
+Служит для синхронизации объектов Python и записей реляционной базы данных.
+SQLAlchemy позволяет описывать структуры баз данных и способы взаимодействия с ними на языке Python без использования SQL
+pip install sqlalchemy
