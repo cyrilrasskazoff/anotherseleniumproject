@@ -5,3 +5,5 @@ from selenium.webdriver.chrome.service import Service
 
 service = Service(executable_path=ChromeDriverManager().install()) # создадим объект класса Service
 driver = webdriver.Chrome(service=service)
+
+
