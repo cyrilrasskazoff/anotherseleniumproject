@@ -4,6 +4,7 @@
 # же пользоваться глобальным поиском с помощью //
 # ➖ Порядковый номер - (//header/div)[2]
 # ➖ Поиск по атрибуту - //input[@type='submit']
-# ➖ Поиск по параметру text - //button[text()='Sign in']
+# ➖ Поиск по параметру text - //button[text()='Sign in'], по частичному совпадению текста -
+# //p[contains(text(), "<text>")]
 # ➖ Поиск по содержимому - //button[contains(@class, 'btn')]
 # ➖ Поиск по нескольким атрибутам - //input[@type='email' and @role='login']
