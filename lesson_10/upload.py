@@ -6,7 +6,8 @@ import time
 service = Service(executable_path=ChromeDriverManager().install())
 
 driver = webdriver.Chrome(service=service)
-# загрузка файла осуществляется через unout у которого type = "file", поэтому нужео искать этот элемент на странице
+# загрузка файла осуществляется через тэг input у которого type = "file", он может быть скрыт, поэтому нужно искать
+# этот элемент на странице
 driver.get("https://the-internet.herokuapp.com/upload")
 time.sleep(3)
 choose_file_btn = driver.find_element("xpath", "//input[@id='file-upload']")
