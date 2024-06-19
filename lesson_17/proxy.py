@@ -9,6 +9,7 @@ PROXY_SERVER = "155.94.241.134:3128"
 
 options = Options()
 # options.add_argument(f"--proxy-server=ip_proxy:port_proxy")
+# options.add_argument(f'--proxy-server=username:password@ip_proxy:port_proxy') - if Proxy requires authorisation
 options.add_argument(f"--proxy-server={PROXY_SERVER}")
 
 service = Service(executable_path=ChromeDriverManager().install())
