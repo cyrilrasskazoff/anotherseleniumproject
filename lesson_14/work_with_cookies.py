@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-from selenium.webdriver.support import expected_conditions as EC
 import pickle
 
 service = Service(executable_path=ChromeDriverManager().install())
@@ -32,7 +31,7 @@ time.sleep(2)
 print(driver.get_cookie("testName")) # {'domain': 'www.freeconferencecall.com', 'httpOnly': False,
 # 'name': 'testName', 'path': '/', 'sameSite': 'Lax', 'secure': True, 'value': 'testValue'}
 
-# замена суествующей cookie:
+# замена существующей cookie:
 driver.delete_cookie("testName")
 driver.add_cookie({
     "name": "testName",
