@@ -1,23 +1,24 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
 service = Service(executable_path=ChromeDriverManager().install())
-chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_argument("--headless")
-chrome_options.add_argument("--incognito")
+options = Options()
+# options.add_argument("--headless")
+options.add_argument("--incognito")
 
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(service=service, options=options)
 
 wait = WebDriverWait(driver, 15, poll_frequency=1)
 
 driver.get("https://demoqa.com/dynamic-properties")
 
 BTN_VISIBLE_AFTER = ("xpath", "//button[@id='visibleAfter']")
-wait.until(ec.visibility_of_element_located(BTN_VISIBLE_AFTER)).click() # метод visibility_of_element_located автоматически
-# распаковывает кортеж BTN_VISIBLE_AFTER, поэтому распаковщик (*) не нужен
+wait.until(ec.visibility_of_element_located(BTN_VISIBLE_AFTER)).click() # метод visibility_of_element_located
+# автоматически распаковывает кортеж BTN_VISIBLE_AFTER, поэтому распаковщик (*) не нужен
 
 BTN_ENABLE_AFTER = ("xpath", "//button[@id='enableAfter']")
 wait.until(ec.element_to_be_clickable(BTN_ENABLE_AFTER)).click()

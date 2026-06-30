@@ -1,14 +1,15 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver import Keys
 import time
 
 service = Service(executable_path=ChromeDriverManager().install())
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--window-size=1920,1080")
+options = Options()
+options.add_argument("--window-size=1920,1080")
 
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(service=service, options=options)
 
 # современная разработка не использует 'select' в дропдаунах - используется оычный 'div'
 # первый способ работы с такими дропдаунами (с помощью инпута):

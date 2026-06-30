@@ -1,16 +1,17 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 from selenium.webdriver.support import expected_conditions as ec
 
 service = Service(executable_path=ChromeDriverManager().install())
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--window-size=1920,1080")
-chrome_options.add_argument("--incognito")
+options = Options()
+options.add_argument("--window-size=1920,1080")
+options.add_argument("--incognito")
 
-driver = webdriver.Chrome(service=service, options=chrome_options)
+driver = webdriver.Chrome(service=service, options=options)
 
 wait = WebDriverWait(driver, 15, poll_frequency=1)
 
