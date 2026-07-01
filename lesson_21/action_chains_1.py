@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 # которые не могут быть выполнены стандартными средствами Selenium
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 
 options = Options()
 options.add_argument("--window-size=1920,1080")
@@ -47,17 +47,17 @@ time.sleep(2)
 # соединим в цепочку действия
 driver.refresh()
 time.sleep(2)
-actions.click(wait.until(EC.element_to_be_clickable(LEFT_CLICK_BTN_LOCATOR))).\
-    double_click(wait.until(EC.element_to_be_clickable(DOUBLE_CLICK_BTN_LOCATOR))).\
-    context_click(wait.until(EC.element_to_be_clickable(CONTEXT_CLICK_BTN_LOCATOR))).perform()
+actions.click(wait.until(ec.element_to_be_clickable(LEFT_CLICK_BTN_LOCATOR))).\
+    double_click(wait.until(ec.element_to_be_clickable(DOUBLE_CLICK_BTN_LOCATOR))).\
+    context_click(wait.until(ec.element_to_be_clickable(CONTEXT_CLICK_BTN_LOCATOR))).perform()
 time.sleep(3)
 
 # добавим паузы в цепочку с пом. метода pause()
 driver.refresh()
 time.sleep(2)
-actions.click(wait.until(EC.element_to_be_clickable(LEFT_CLICK_BTN_LOCATOR))).pause(2).\
-    double_click(wait.until(EC.element_to_be_clickable(DOUBLE_CLICK_BTN_LOCATOR))).pause(2).\
-    context_click(wait.until(EC.element_to_be_clickable(CONTEXT_CLICK_BTN_LOCATOR))).perform()
+actions.click(wait.until(ec.element_to_be_clickable(LEFT_CLICK_BTN_LOCATOR))).pause(2).\
+    double_click(wait.until(ec.element_to_be_clickable(DOUBLE_CLICK_BTN_LOCATOR))).pause(2).\
+    context_click(wait.until(ec.element_to_be_clickable(CONTEXT_CLICK_BTN_LOCATOR))).perform()
 time.sleep(2)
 
 # real_life
